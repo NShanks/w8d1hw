@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Home, Dashboard, SignIn } from './Components';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -9,7 +9,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+      <Route path='/' element={<Home title={'Pokemon Inventory'} />}/>
+      <Route path='/dashboard' element={<Dashboard/>}/>
+      <Route path='/signin' element={<SignIn/>}/>
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
